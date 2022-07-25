@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Grant Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <!--<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">--> <!-- For integrating Flask and HTML -->
+    <link rel="stylesheet" href="..\static\style.css"><!-- For running locally -->
+</head>
+
+{% block head %}
+<script src="//cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content%}
+
+
+</body>
+
+<h3>{{greetings}}</h3>
+
+<div>
+    <div id="plotly-stock-candle"></div>
+
+            <script>
+                //Parse your Json variable here
+                var graphs = {{ plotly_plot | safe }};
+                Plotly.plot('plotly-stock-candle', graphs, {});
+            </script>
+</div>
+
+<h3>{{where_you_stand}}</h3>
+
+
+</body>
+
+
+
+{% endblock %}
